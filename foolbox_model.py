@@ -13,7 +13,7 @@ def unzip_model(name):
         try:
             zipf = zipfile.ZipFile(dire+".zip", "r")
         except Exception as e:
-            print("Make sure git-lfs is installed")
+            print("ERROR while unzipping model! Please make sure git-lfs is installed!")
             raise
         zipf.extractall(os.path.join(here, "test_models"))
         zipf.close()
