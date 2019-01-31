@@ -7,6 +7,8 @@ from foolbox.models import TensorFlowModel
 
 from .base import BaseModel
 
+root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 class BaseTFModel(BaseModel):
     @classmethod
     def create_fmodel(cls, cfg):
@@ -57,6 +59,7 @@ class BaseTFModel(BaseModel):
         config = tf.ConfigProto()
         config.gpu_options.allow_growth = True
         sess = tf.get_default_session() or tf.Session(graph=self.graph, config=config)
+        path = os.path.join(root_path, path)
         print("load checkpoint from path: ", path)
         if os.path.isdir(path):
             path = tf.train.latest_checkpoint(path)
