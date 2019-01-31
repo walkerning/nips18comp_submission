@@ -1,0 +1,49 @@
+models:
+  - weight: 1
+    type: inception
+    checkpoint: ./test_models/inception/model_0
+    load_name_space: model_0
+    cfg:
+      name_space: model_0
+  - weight: 1
+    type: resnet
+    checkpoint: ./test_models/6/6
+    load_name_space: stu_
+    cfg:
+      name_space: resnet_6
+      resnet_size: 18
+      bottleneck: false
+      num_classes: 200
+      num_filters: 64
+      kernel_size: 3
+      conv_stride: 1
+      first_pool_size: 0
+      first_pool_stride: 2
+      second_pool_size: 7
+      second_pool_stride: 1
+      block_sizes: [2, 2, 2, 2]
+      block_strides: [1, 2, 2, 2]
+      final_size: 512
+      version: 2
+      data_format:
+  - weight: 1
+    type: resnet
+    checkpoint: ./test_models/4/model_1
+    load_name_space: model_1
+    cfg:
+      name_space: resnet_4
+      resnet_size: 18
+      bottleneck: false
+      num_classes: 200
+      num_filters: 64
+      kernel_size: 3
+      conv_stride: 1
+      first_pool_size: 0
+      first_pool_stride: 2
+      second_pool_size: 7
+      second_pool_stride: 1
+      block_sizes: [2, 2, 2, 2]
+      block_strides: [1, 2, 2, 2]
+      final_size: 512
+      version: 2
+      data_format:
